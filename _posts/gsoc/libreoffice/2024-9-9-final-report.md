@@ -8,20 +8,15 @@ tags:
   - open-source
 ---
 
-## Hello everybody :)
+## Hello everyone!
 
-LibreOffice Calc has a nice functions deck on the sidebar allowing to pick one of the many functions,
-and this functions panel has some room for improvements. 
-The project aims to improve this functions deck to enhance usability and functionality 
-to create a better user experience.  
+I am excited to share my experience participating in the Google Summer of Code (GSoC) program this year. Being part of this incredible program has been both an enriching and rewarding journey. It provided me with the opportunity to collaborate with the open-source community and contribute to one of my favorite FOSS projects, LibreOffice.
 
-The project was about making these general improvements to the function deck,
-but we find it better to make the enancements apply to both function deck (FD) and function wizard (FW). 
-It was not always an easy thing to do it in both places, as they are in different modules and created with different code structrures.
+LibreOffice Calc includes a convenient functions deck on the sidebar, allowing users to easily select from a variety of functions. While this panel is useful, there is significant room for improvement to further enhance its usability and functionality, creating a more seamless user experience.
 
-It was really challenging working with such complex code base,
-I did spend most of the time trying to find where to put what, with dozens of hours debugging. 
-Actully my debugging skills has been enhanced alot with the use of debuggers like rr which is built on top of gdb.
+The goal of my project was to introduce general improvements to the functions deck. However, we decided it would be more beneficial to apply these enhancements to both the Functions Deck (FD) and the Functions Wizard (FW). This presented some challenges, as the FD and FW reside in different modules and are built with distinct code structures.
+
+Working within such a complex codebase was a real challenge. Much of my time was spent figuring out where to implement changes, alongside many hours of debugging. On the positive side, this experience has significantly improved my debugging skills, particularly through the use of advanced tools like rr, which builds on gdb.
 
 ***Project Goals:***
   - List all functions in collapsible sections (rather the current filtering per dropdown)
@@ -76,5 +71,6 @@ Screenshots of the enhancements
 
 ------------------------------------------------------
 
-I really enjoyed working on this project, it was a great and challenging experience. I am willing to continue contributing to LibreOffice and open-source in general.
-I would like to show my gratitude to the community for their help, and speciall thanks to my mentors (Andreas Heinisch, Heiko Tietze) for their guidance and support throughout the project.
+Working on this project has been an incredibly rewarding and challenging experience. I thoroughly enjoyed every aspect of it and am eager to continue contributing to LibreOffice and the open-source community at large.
+
+I would like to express my sincere gratitude to the entire community for their invaluable help and collaboration. Special thanks go to my mentors, Andreas Heinisch and Heiko Tietze, for their continuous guidance and support throughout the project. Their expertise and mentorship have been instrumental in my growth and development.
