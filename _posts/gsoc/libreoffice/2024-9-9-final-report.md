@@ -4,11 +4,12 @@ date: 2024-09-09
 permalink: /posts/gsoc/libreoffice/final-report-2024
 tags:
   - gsoc
-  - libreoffice
   - open-source
 ---
 
-## Hello everyone!
+## GSoC'24 is Over 🎉
+
+Hello everyone 👋
 
 I am excited to share my experience participating in the Google Summer of Code (GSoC) program this year. Being part of this incredible program has been both an enriching and rewarding journey. It provided me with the opportunity to collaborate with the open-source community and contribute to one of my favorite FOSS projects, LibreOffice.
 
