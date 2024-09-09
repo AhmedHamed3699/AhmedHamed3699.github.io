@@ -3,8 +3,7 @@ title: "Final Report - GSoC'24"
 date: 2024-09-09
 permalink: /posts/gsoc/libreoffice/final-report-2024
 tags:
-  - gsoc
-  - open-source
+  - gsoc/open-source
 ---
 
 ## GSoC'24 is Over 🎉
