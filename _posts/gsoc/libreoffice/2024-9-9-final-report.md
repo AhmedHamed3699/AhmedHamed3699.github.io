@@ -3,7 +3,8 @@ title: "Final Report - GSoC'24"
 date: 2024-09-09
 permalink: /posts/gsoc/libreoffice/final-report-2024
 tags:
-  - gsoc/open-source
+  - gsoc
+  - open-source
 ---
 
 ## GSoC'24 is Over 🎉
@@ -18,58 +19,61 @@ The goal of my project was to introduce general improvements to the functions de
 
 Working within such a complex codebase was a real challenge. Much of my time was spent figuring out where to implement changes, alongside many hours of debugging. On the positive side, this experience has significantly improved my debugging skills, particularly through the use of advanced tools like rr, which builds on gdb.
 
-***Project Goals:***
-  - List all functions in collapsible sections (rather the current filtering per dropdown)
-  - Add a help button to open the respective documentation page
-  - Improve searching techniques
+**_Project Goals:_**
 
-***Abandoned Goals:***
-  - Save custom made formulas, to be used anywhere
-  - Add an editor area that provides structure of the function, with:
-    - Syntax highlighting and formatting – with connection to referenced cells
-    - Ability to drill down for better debugging process
+- List all functions in collapsible sections (rather the current filtering per dropdown)
+- Add a help button to open the respective documentation page
+- Improve searching techniques
+
+**_Abandoned Goals:_**
+
+- Save custom made formulas, to be used anywhere
+- Add an editor area that provides structure of the function, with:
+  - Syntax highlighting and formatting – with connection to referenced cells
+  - Ability to drill down for better debugging process
 
 [Link to The meta-bug ticket on Bugzilla](https://bugs.documentfoundation.org/show_bug.cgi?id=92416)
 
-My Work & Progress
-==================
+## My Work & Progress
+
 My work was splitted into seperate tasks conserning every proposed enhancement.
 
-> Note: you can go to the bug ticket on Bugzilla by clicking on tdf#***** at the begining of the commit message.
+> Note: you can go to the bug ticket on Bugzilla by clicking on tdf#**\*** at the begining of the commit message.
 
-***Converting functions list into collapsible sections*** -->
-[Patch link](https://gerrit.libreoffice.org/c/core/+/169639)  
+**_Converting functions list into collapsible sections_** -->
+[Patch link](https://gerrit.libreoffice.org/c/core/+/169639)
 
-***Adding a help button to open respective help documentation*** ->
-[Patch link](https://gerrit.libreoffice.org/c/core/+/170181) - 
+**_Adding a help button to open respective help documentation_** ->
+[Patch link](https://gerrit.libreoffice.org/c/core/+/170181) -
 [Bug fix](https://gerrit.libreoffice.org/c/core/+/171929)
 
-***Enhancing searching functionality - adding similarity search*** ->
+**_Enhancing searching functionality - adding similarity search_** ->
 [Patch link](https://gerrit.libreoffice.org/c/core/+/170073)
 
-***Adding a category to store favorite functions*** ->
+**_Adding a category to store favorite functions_** ->
 [Patch link](https://gerrit.libreoffice.org/c/core/+/171828)
 
-***Making Initial focus to be in the document when creating a new sheet*** ->
+**_Making Initial focus to be in the document when creating a new sheet_** ->
 [Patch link](https://gerrit.libreoffice.org/c/core/+/171709)
 
-Futrue Work
------------
+## Future Work
 
-- *Cycling between absolute and relative references everywhere using F4 Key* ->
-[Bug Link](https://bugs.documentfoundation.org/show_bug.cgi?id=162287)
+- _Cycling between absolute and relative references everywhere using F4 Key_ ->
+  [Bug Link](https://bugs.documentfoundation.org/show_bug.cgi?id=162287)
 
-- *Adding typical keyboard shortcuts*
+- _Adding typical keyboard shortcuts_
 
-Screenshots of the enhancements
--------------------------------
+## Screenshots of the enhancements
+
 ### The Function Deck
+
 ![FD](../../../images/Functions-Deck.png)
 
 ### The Function Wizard
+
 ![FW](../../../images/Function-Wizard.png)
 
-------------------------------------------------------
+---
 
 Working on this project has been an incredibly rewarding and challenging experience. I thoroughly enjoyed every aspect of it and am eager to continue contributing to LibreOffice and the open-source community at large.
 
