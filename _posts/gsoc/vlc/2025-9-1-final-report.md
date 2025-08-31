@@ -5,66 +5,90 @@ permalink: /posts/gsoc/vlc/final-report-2025
 tags:
   - gsoc
   - open-source
+  - vlc
+  - ndi
 ---
 
-## GSoC'25 is Over 🎉
+## GSoC'25 with VLC 🎉
 
 Hello everyone 👋
 
-This year was my second time participating in the Google Summer of Code (GSoC), and the experience turned out to be quite different from my first. Having gone through the program before, I was able to approach it with more perspective, while also exploring new challenges and areas of contribution. This time, I had the opportunity to work with VLC, one of my favorite FOSS projects, and the journey has been both rewarding and a valuable step forward in my open-source involvement.
+This year marked my second time participating in Google Summer of Code (GSoC), and it felt both familiar and completely new at the same time. Having gone through GSoC before, I was able to approach the program with more confidence and perspective, but the challenges were on a whole different scale.
 
-Network Device Interface (NDI) is a software specification that enables
-high-definition video transmission over a computer network with low
-latency and high quality.
+I had the privilege of working with **VLC**, one of the most widely used open-source media players and one of my favorite FOSS projects. My project focused on **Network Device Interface (NDI)**, a protocol designed for high-quality, low-latency video transmission over networks.
 
-There was an open-source cross-platform library called libNDI started by Jean-Baptiste Kempf 5 years ago, but it was in its very early stages with everything nearly in one file. It only supported receiving NDI streams and lacked support for the newer NDI-HX variants. My project aimed to enhance this library overall structure and improved performance and security and expand NDI versions supportby adding support for sending NDI streams. So, The improved implementation was then integrated into VLC, enabling seamless NDI-based discovery and playback within the media player.
+Until now, there was no open-source, cross-platform implementation of NDI. There was an early prototype library, `libNDI`, had been started 5 years ago by Jean-Baptiste Kempf, but was incomplete and difficult to maintain. My task was to **revive and expand this library**, then integrate it into VLC so the player could discover and play NDI streams out of the box.
 
-This was an incredible opportunity, as there was no existing open-source, cross-platform implementation of the NDI protocol. I believe this project will bring significant value to the community. The experience was both enjoyable and challenging, especially since there was little to no clear documentation available. To move forward, I had to experiment extensively, investigate different behaviors, and analyze the network to truly understand how everything worked.
+### Why this matters
 
-**_Project Goals:_**
+_To begin with, NDI is fun :)_  
+Adding NDI support addresses a noticeable gap in the open-source ecosystem. Since many broadcasters, streamers, and production setups rely on NDI for real-time workflows, extending VLC with the ability to handle NDI streams makes the protocol more accessible to a wider community, including both professionals and hobbyists.
 
-These are the goals that were orignially mentioned in the proposal:
+## Project Goals
 
-1. Expand Protocol Support
-   a. Implement support for NDI-HX2.
-   b. Develop a UDP-based NDI variant.
-2. Implement NDI Stream Sending
-3. Reduce Dependencies to Improve Performance
-   a. Remove dependency on libavutil (av_fifo functions).
-   b. Optimize memory management and buffer handling.
-4. Strengthen Security & Stability
-   a. Integrate fuzzing-based security testing.
-   b. Improve error handling and robustness.
-5. Integrating libNDI into VLC.
+The original goals outlined in my proposal included:
+
+1. **Expand Protocol Support**
+
+   - Implement support for NDI-HX2
+   - Develop a UDP-based NDI variant
+
+2. **Reduce Dependencies & Improve Performance**
+
+   - Remove dependency on libavutil
+   - Optimize memory and buffer handling
+
+3. **Strengthen Security & Stability**
+
+   - Add fuzzing-based testing
+   - Improve error handling and robustness
+
+4. **Implement Stream Sending**
+
+5. **Integrate `libNDI` into VLC**
 
 ## My Work & Progress
 
-This is a link to libndi project repository: [libndi](https://code.videolan.org/AhmedHamed3699/libndi)
+The project began with a major **refactoring of `libNDI`** to make it efficient, modular, and maintainable. From there, I worked on extending its functionality and integrating it into VLC.
 
-We found that the library needs a lot of refactoring so it can be more efficient and easier to maintain and add new features. So that was our main focus, besides integrating libNDI into VLC.
+Some highlights include:
 
-- Improve libNDI library
-  - A great amount of code refactoring to improve maintainability.
-  - Improved receiving functionality.
-  - Add non-blocking support for receiving NDI streams.
-  - Reduced Dependencies on external libraries
-- Integrate libNDI into VLC successfully, and now it can discover and playback NDI streams.
+- **Library improvements**
 
-Currently working on adding support for all HX variants, it is taking more time than expected due to the complexity of analyzing the behaviour of the sender.
+  - Large-scale code refactoring for clarity and maintainability
+  - Enhanced receiving functionality with **non-blocking support**
+  - Reduced reliance on external libraries
 
-Project was split into some MRs, you can find them here:
+- **VLC integration**
 
-[Import Tobias Work & Refactor Code](https://code.videolan.org/jbk/libndi/-/merge_requests/12) (Merged)  
-[Integrate libNDI into VLC](https://code.videolan.org/videolan/vlc/-/merge_requests/7371) (In Progress)  
-[Add NDI input module ](https://code.videolan.org/videolan/vlc/-/merge_requests/7396) (In Progress)  
+  - VLC can now discover and playback NDI streams directly
+
+- **Ongoing development**
+
+  - Continuing work on full support for all HX variants, which requires deep analysis of sender behavior
+
+Key merge requests:
+
+- [Import Tobias’ work & Refactor Code](https://code.videolan.org/jbk/libndi/-/merge_requests/12) (Merged)
+- [Integrate libNDI into VLC](https://code.videolan.org/videolan/vlc/-/merge_requests/7371) (In Progress)
+- [Add NDI Input Module](https://code.videolan.org/videolan/vlc/-/merge_requests/7396) (In Progress)
+
+Repository: [libNDI](https://code.videolan.org/AhmedHamed3699/libndi)
 
 ## Future Work
 
-- Implement NDI Stream Sending Pipeline
-- Expand Protocol Support with a UDP-based NDI variant and implement QUIC support
-- Strengthen Security & Stability through integrating fuzzing-based security testing to identify and fix
-   vulnerabilities in packet parsing and stream handling.
+There is still plenty of room for growth, including:
 
----
+- Implementing a **stream sending pipeline**
+- Adding a **UDP-based variant** (with QUIC support)
+- Integrating **fuzzing-based testing** to strengthen security against malformed packets
 
-I want to highlight that this has been one of the most exciting projects I have ever worked on. I am deeply grateful to my mentors, Steve Lhomme and Jean-Baptiste Kempf, as well as the entire VLC community, for their continuous support and guidance throughout this journey. I learned a great deal from them, and I look forward to continuing this collaboration on this project and on VLC more broadly.
+## Reflections
+
+This project has been one of the most exciting experiences of my open-source journey so far. Unlike my first GSoC, which was about enhancing usability within an existing application, this year I worked on a standalone library and its integration into a larger system, a very different challenge that taught me a lot about networking, packet analysis, and multimedia streaming.
+
+The work was both enjoyable and challenging, especially given the limited documentation available for NDI. Moving forward often meant experimenting, carefully observing different behaviors, and analyzing network traffic to piece together how everything worked. This process was not always straightforward, but it was incredibly rewarding.
+
+I am deeply grateful to my mentors, **Steve Lhomme** and **Jean-Baptiste Kempf**, as well as the VLC community, for their constant support, feedback, and guidance. The review process was one of the most engaging and insightful experiences I’ve had, and their mentorship pushed me to think critically and tackle problems from multiple angles.
+
+I’m proud of what we’ve achieved, and even more excited about the potential of where this project will go. I look forward to continuing this collaboration, improving `libNDI`, and contributing to VLC and the open-source ecosystem.
